@@ -11,7 +11,8 @@ var score = 0;
             score -= cursorCost;
             cursorCount++
             cps++;
-            Math.floor(Math.pow(cursorCost, 1.005));
+            cursorCost = Math.floor(Math.pow(cursorCost, 1.05));
+            document.getElementById('cursorCost') = cursorCost
             cursorCountElement.innerHTML = cursorCount;
         }
     }
