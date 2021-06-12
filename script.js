@@ -11,10 +11,11 @@ var score = 0;
             score -= cursorCost;
             cursorCount++
             cps++;
+            cursorCountElement.innerHTML = cursorCount;
         }
     }
     cursorCountElement = document.getElementById("cursorCount");
     setInterval(function() {
         score += cps;
-        cursorCountElement.innerHTML = cursorCount;
+        document.getElementById('counter').innerHTML = score;
     },1000);
