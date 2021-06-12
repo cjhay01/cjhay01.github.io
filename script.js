@@ -15,6 +15,6 @@ var score = 0;
     }
     cursorCountElement = document.getElementById("cursorCount");
     setInterval(function() {
-        cookieCount += cps;
-        countElement.innerHTML = cookieCount;
+        score += cps;
+        countElement.innerHTML = score;
     },1000);
