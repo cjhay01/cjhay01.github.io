@@ -3,7 +3,14 @@
 <head>
     <title>click the button.</title>
 </head>
-<button onclick="increase()">click me</button>
+<div>
+    <p id="counter"></p>
+    <button onclick="increase()">click me</button>
+</div>
+<div class="item" id="cursor">
+	Cursors: <span id="cursorCount">0</span><br>
+	Cursor Cost: <span id="cursorCost">10</span><br>
+	<input type="button" id="buyCursorBtn" value="Buy Cursor">
+</div>
 <script src="script.js"></script>
-<p id="counter"></p>
 </html>
