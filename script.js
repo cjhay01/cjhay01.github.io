@@ -16,5 +16,5 @@ var score = 0;
     cursorCountElement = document.getElementById("cursorCount");
     setInterval(function() {
         score += cps;
-        countElement.innerHTML = score;
+        cursorCountElement.innerHTML = cursorCount;
     },1000);
