@@ -1,3 +1,4 @@
+var cps = 0;
 var cursorCount = 0;
 var cursorCost = 0;
 var score = 0;
@@ -8,6 +9,12 @@ var score = 0;
     document.getElementById("buyCursorBtn").onclick = function() {
         if (score >= cursorCost) {
             score -= cursorCost;
-            cursorCount++;
+            cursorCount++
+            cps++;
         }
     }
+    cursorCountElement = document.getElementById("cursorCount");
+    setInterval(function() {
+        cookieCount += cps;
+        countElement.innerHTML = cookieCount;
+    },1000);
