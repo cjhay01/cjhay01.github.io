@@ -1,6 +1,6 @@
 var cps = 0;
 var cursorCount = 0;
-var cursorCost = 0;
+var cursorCost = 10;
 var score = 0;
     function increase() {
       score++;
@@ -11,6 +11,7 @@ var score = 0;
             score -= cursorCost;
             cursorCount++
             cps++;
+            Math.floor(Math.pow(cursorCost, 1.005));
             cursorCountElement.innerHTML = cursorCount;
         }
     }
