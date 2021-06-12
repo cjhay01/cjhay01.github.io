@@ -17,7 +17,9 @@ var score = 0;
         }
     }
     cursorCountElement = document.getElementById("cursorCount");
-    setInterval(function() {
-        score += cps;
-        document.getElementById('counter').innerHTML = score;
-    },1000);
+    if (cps > 0) {
+        setInterval(function() {
+            score++;
+            document.getElementById('counter').innerHTML = score;
+        },1000 / cps);
+    }
