@@ -9,7 +9,7 @@ var score = 0;
     document.getElementById("buyCursorBtn").onclick = function() {
         if (score >= cursorCost) {
             score -= cursorCost;
-            cursorCount++
+            cursorCount++;
             cps++;
             cursorCost = Math.floor(Math.pow(cursorCost, 1.05));
             document.getElementById('cursorCost').innerHTML = cursorCost;
@@ -21,5 +21,5 @@ var score = 0;
         setInterval(function() {
             score++;
             document.getElementById('counter').innerHTML = score;
-        },1000 / cps);
+        }, 1000 / cps);
     }
