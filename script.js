@@ -11,15 +11,13 @@ var score = 0;
             score -= cursorCost;
             cursorCount++;
             cps++;
-            cursorCost = Math.floor(Math.pow(cursorCost, 1.05));
+            cursorCost = Math.floor(Math.pow(cursorCost, 1.01));
             document.getElementById('cursorCost').innerHTML = cursorCost;
             cursorCountElement.innerHTML = cursorCount;
         }
     }
     cursorCountElement = document.getElementById("cursorCount");
-    if (cps > 0) {
         setInterval(function() {
-            score++;
+            score += cps;
             document.getElementById('counter').innerHTML = score;
         }, 1000);
-    }
