@@ -18,9 +18,8 @@ var score = 0;
     }
     cursorCountElement = document.getElementById("cursorCount");
     if (cps > 0) {
-	let time = 1000 / cps
         setInterval(function() {
             score++;
             document.getElementById('counter').innerHTML = score;
-        }, time);
+        }, 1000);
     }
