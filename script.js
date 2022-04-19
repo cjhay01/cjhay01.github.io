@@ -1,6 +1,6 @@
 var cps = 0;
 var cursorCount = 0;
-var cursorCost = 10;
+var cursorCost = 100;
 var score = 0;
     function increase() {
       score++;
@@ -11,7 +11,7 @@ var score = 0;
             score -= cursorCost;
             cursorCount++;
             cps++;
-            cursorCost = Math.ceil(Math.pow(cursorCost, 1.03));
+            cursorCost = Math.ceil(Math.pow(cursorCost, 1.05));
             document.getElementById('cursorCost').innerHTML = cursorCost;
             cursorCountElement.innerHTML = cursorCount;
         }
