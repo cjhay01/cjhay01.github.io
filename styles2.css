@@ -5,14 +5,12 @@
 
 * {
     font-family: 'CookieRun';
+    touch-action: manipulation;
 }
 div {
     margin-left: 0px;
     text-align: center;
     padding-bottom: 30px;
-}
-#buton {
-    size: 69px
 }
 #counter {
     font-family: 'CookieRun';

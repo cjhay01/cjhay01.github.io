@@ -6,15 +6,15 @@ var cpcCost = 69;
 var score = 0;
     function increase() {
     score += cpc;
-    document.getElementById('counter').innerHTML = Math.round(score);
+    document.getElementById('counter').innerHTML = Math.round(score).toLocaleString();
     }
     document.getElementById("buyCursorBtn").onclick = function() {
         if (score >= cursorCost) {
             score -= cursorCost;
             cursorCount++;
             cps++;
-            cursorCost = Math.ceil(Math.pow(cursorCost, 1.02));
-            document.getElementById('cursorCost').innerHTML = cursorCost;
+            cursorCost = Math.ceil(Math.pow(cursorCost, 1.00));
+            document.getElementById('cursorCost').innerHTML = cursorCost.toLocaleString();
             cursorCountElement.innerHTML = cursorCount;
         }
     }
@@ -23,7 +23,7 @@ var score = 0;
             score -= cpcCost;
             cpc++;
             cpcCost = Math.ceil(Math.pow(cpcCost, 1.02));
-            document.getElementById('cpcCost').innerHTML = cpcCost
+            document.getElementById('cpcCost').innerHTML = cpcCost.toLocaleString()
             cpcElement.innerHTML = cpc;
         }
     }
@@ -34,5 +34,5 @@ var score = 0;
         score += cps * 0.004;
         }, 1)
         setInterval(() => {
-            document.getElementById('counter').innerHTML = Math.round(score);
+            document.getElementById('counter').innerHTML = Math.round(score).toLocaleString();
         }, 1);
