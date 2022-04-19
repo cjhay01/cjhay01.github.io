@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'CookieRun';
+    src: url('https://cjhay01.github.io/fonts/CookieRun_Bold.ttf');
+}
+
+* {
+    font-family: 'CookieRun';
+}
+div {
+    margin-left: 0px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+#buton {
+    size: 69px
+}
+#counter {
+    font-family: 'CookieRun';
+    font-size: xx-large
+}
