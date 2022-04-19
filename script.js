@@ -13,7 +13,7 @@ var score = 0;
             score -= cursorCost;
             cursorCount++;
             cps++;
-            cursorCost = Math.ceil(Math.pow(cursorCost, 1.03));
+            cursorCost = Math.ceil(Math.pow(cursorCost, 1.02));
             document.getElementById('cursorCost').innerHTML = cursorCost;
             cursorCountElement.innerHTML = cursorCount;
         }
@@ -22,6 +22,7 @@ var score = 0;
         if (score >= cpcCost) {
             score -= cpcCost;
             cpc++;
+            cpcCost = Math.ceil(Math.pow(cpcCost, 1.02));
             document.getElementById('cpcCost').innerHTML = cpcCost
             cpcElement.innerHTML = cpc;
         }
