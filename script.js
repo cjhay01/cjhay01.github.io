@@ -11,42 +11,59 @@ document.onkeydown = function(e) {
     if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
     return false;
     }
-    }
-var cps = 0;
-var cursorCount = 0;
-var cursorCost = 100;
-var cpc = 1;
-var cpcCost = 69;
-var score = 0;
+}
+var gameData = {
+ cursorCount: 0,
+ cursorCost: 100,
+ cpc: 1,
+ cpcCost: 69,
+ score: 0,
+}
     function increase() {
-    score += cpc;
-    document.getElementById('counter').innerHTML = Math.round(score).toLocaleString();
+    gameData.score += gameData.cpc;
+    document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
     }
     document.getElementById("buyCursorBtn").onclick = function() {
-        if (score >= cursorCost) {
-            score -= cursorCost;
-            cursorCount++;
-            cps++;
-            cursorCost = Math.ceil(Math.pow(cursorCost, 1.00));
-            document.getElementById('cursorCost').innerHTML = cursorCost.toLocaleString();
-            cursorCountElement.innerHTML = cursorCount;
+        if (gameData.score >= gameData.cursorCost) {
+            gameData.score -= gameData.cursorCost;
+            gameData.cursorCount++;
+            gameData.cps++;
+            gameData.cursorCost = Math.floor(Math.pow(gameData.cursorCost, 1.00));
+            document.getElementById('cursorCost').innerHTML = gameData.cursorCost.toLocaleString();
+            cursorCountElement.innerHTML = gameData.cursorCount;
         }
     }
     document.getElementById("cpcBtn").onclick = function() {
-        if (score >= cpcCost) {
-            score -= cpcCost;
-            cpc++;
-            cpcCost = Math.ceil(Math.pow(cpcCost, 1.02));
-            document.getElementById('cpcCost').innerHTML = cpcCost.toLocaleString()
-            cpcElement.innerHTML = cpc;
+        if (gameData.score >= gameData.cpcCost) {
+            gameData.score -= gameData.cpcCost;
+            gameData.cpc++;
+            gameData.cpcCost = Math.floor(Math.pow(gameData.cpcCost, 1.02));
+            document.getElementById('cpcCost').innerHTML = gameData.cpcCost.toLocaleString()
+            cpcElement.innerHTML = gameData.cpc;
         }
     }
     cpcElement = document.getElementById("cpc");
-        document.getElementById('cpc').innerHTML = cpc;
+        document.getElementById('cpc').innerHTML = gameData.cpc;
     cursorCountElement = document.getElementById("cursorCount");
         setInterval(function(){
-        score += cps * 0.004;
+            gameData.score += gameData.cps * 0.004;
         }, 1)
         setInterval(() => {
-            document.getElementById('counter').innerHTML = Math.round(score).toLocaleString();
+            document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
         }, 1);
+
+var saveGameLoop = window.setInterval(function() {
+    localStorage.setItem("gameSave", JSON.stringify(gameData))
+}, 5000)
+var savegame = JSON.parse(localStorage.getItem("gameSave"))
+if (savegame !== null) {
+  gameData = savegame
+  document.getElementById('cpc').innerHTML = gameData.cpc
+  document.getElementById('cpcCost').innerHTML = gameData.cpcCost
+  document.getElementById('cursorCount').innerHTML = gameData.cursorCount
+  document.getElementById('cursorCost').innerHTML = gameData.cursorCost
+}
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+ }
