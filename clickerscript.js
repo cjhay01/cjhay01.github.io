@@ -14,12 +14,14 @@ document.onkeydown = function(e) {
     }
 var savegame = JSON.parse(localStorage.getItem("gameSave"));
 var gameData = {
+score: 0,
 cps:0,
 cursorCount: 0,
 cursorCost: 100,
 cpc: 1,
 cpcCost: 69,
-score: 0
+gen2Count: 0,
+gen2Cost: 0,
 }
 if (savegame !== null) gameData = savegame;
 document.getElementById("cursorCost").innerHTML = gameData.cursorCost;
@@ -54,8 +56,8 @@ function increase() {
         setInterval(function(){
             gameData.score += gameData.cps * 0.004;
             document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
+            document.getElementById("scorePerSec").innerHTML = gameData.cps
         }, 1);
-
 var saveGameLoop = window.setInterval(function() {
     localStorage.setItem("gameSave", JSON.stringify(gameData))
      }, 5000)
