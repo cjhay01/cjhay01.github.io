@@ -12,6 +12,7 @@ document.onkeydown = function(e) {
     return false;
     }
     }
+var savegame = JSON.parse(localStorage.getItem("gameSave"))
 var gameData = {
 cps:0,
 cursorCount: 0,
@@ -54,11 +55,7 @@ function increase() {
         }, 1);
         var saveGameLoop = window.setInterval(function() {
             localStorage.setItem("gameSave", JSON.stringify(gameData))
-              }, 15000)
-    var savegame = JSON.parse(localStorage.getItem("gameSave"))
-    if (savegame !== null) {
-      gameData = savegame
-    }
+              }, 5000)
 
 function myFunction() {
     var element = document.body;
