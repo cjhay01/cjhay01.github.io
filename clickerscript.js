@@ -22,11 +22,14 @@ cpcCost: 69,
 score: 0
 }
 if (savegame !== null) gameData = savegame;
+document.getElementById("cursorCost").innerHTML = gameData.cursorCost;
+document.getElementById("cpcCost").innerHTML = gameData.cpcCost;
+document.getElementById("cursorCount").innerHTML = gameData.cursorCount;
 function increase() {
     gameData.score += gameData.cpc;
     document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
     }
-    document.getElementById("buyCursorBtn").onclick = function() {
+    document.getElementById("gen1Btn").onclick = function() {
         if (gameData.score >= gameData.cursorCost) {
             gameData.score -= gameData.cursorCost;
             gameData.cursorCount++;
@@ -46,15 +49,12 @@ function increase() {
         }
     }
     cpcElement = document.getElementById("cpc");
-        document.getElementById('cpc').innerHTML = gameData.cpc;
+        cpcElement.innerHTML = gameData.cpc;
     cursorCountElement = document.getElementById("cursorCount");
         setInterval(function(){
             gameData.score += gameData.cps * 0.004;
-        }, 1)
-        setInterval(() => {
             document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
         }, 1);
-
 
 var saveGameLoop = window.setInterval(function() {
     localStorage.setItem("gameSave", JSON.stringify(gameData))

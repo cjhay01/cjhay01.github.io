@@ -8,18 +8,26 @@
 <button onclick="a()">reset</button>
 <button onclick="save()" id="saveBtn">save</button>
 <div>
-    <p id="counter">0</p>
-    <button id="buton" onclick="increase()" class="button1">click me</button>
+    <h1><span id="counter">x</span> purple potatoes</h1>
+    <h3><span id="scorePerSec">0</span> purple potatoes/s</h3>
+    <button id="buton" onclick="increase()" class="button1">harvest potatoes</button>
 </div>
 <div>
-    cpc: <span id="cpc">1</span> per button click<br>
-    cpc cost: <span id="cpcCost">69</span><br>
-    <input type="button" id="cpcBtn" value="buy cpc" class="button2">
+        moose: <span id="cpc">1</span> purple potatoes per harvest<br>
+        moose cost: <span id="cpcCost">69</span><br>
+        <input type="button" id="cpcBtn" value="buy moose (legally)" class="button2">
 </div>
-<div class="item" id="cursor">
+<div id="cursor">
+    <p class="gen">
 	gen1: <span id="cursorCount">0</span><br>
 	gen1 cost: <span id="cursorCost">100</span><br>
-	<input type="button" id="buyCursorBtn" value="buy gen" class="button3">
+	<input type="button" id="gen1Btn" value="buy gen1" class="button3">
+    </p>
+    <p class="gen" id="gen2">
+        gen2: <span id="gen2Count">0</span> (does not work yet)<br>
+        gen2 cost: <span id="gen2Cost">5,000</span><br>
+        <input type="button" id ="gen2Btn" value="buy gen2">
+    </p>
 </div>
 <div><a href="index.html"><button>return to main page</button></a></div>
 <script src="clickerscript.js"></script>

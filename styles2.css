@@ -15,12 +15,22 @@ body {
     background-color: black;
     color:white;
 }
-div {
+button {
+    border: none;
+}
+div, p {
     margin-left: 0px;
     text-align: center;
     padding-bottom: 30px;
 }
+.gen {
+    margin-right: 0px;
+    display: inline-block;
+}
+#gen2 {
+    margin-left: 10px;
+}
 #counter {
     font-family: 'CookieRun';
-    font-size: xx-large
+    font-size: xx-large;
 }
