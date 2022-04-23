@@ -59,7 +59,9 @@ function increase() {
 var saveGameLoop = window.setInterval(function() {
     localStorage.setItem("gameSave", JSON.stringify(gameData))
      }, 5000)
-
+function save() {
+    localStorage.setItem("gameSave", JSON.stringify(gameData))
+}
 function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");
