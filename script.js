@@ -20,7 +20,7 @@ cpc: 1,
 cpcCost: 69,
 score: 0
 }
-    function increase() {
+function increase() {
     gameData.score += gameData.cpc;
     document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
     }
@@ -52,19 +52,13 @@ score: 0
         setInterval(() => {
             document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
         }, 1);
-
- var saveGameLoop = window.setInterval(function() {
-        localStorage.setItem("gameSave", JSON.stringify(gameData))
-          }, 15000)
-var savegame = JSON.parse(localStorage.getItem("gameSave"))
-if (savegame !== null) {
-  gameData = savegame
-  document.getElementById('counter') = gameData.score;
-  document.getElementById('counter') = gameData.cursorCost;
-  document.getElementById('counter') = gameData.cursorCount;
-  document.getElementById('counter') = gameData.cpc
-  document.getElementById('counter') = gameData.cpcCost;
-}
+        var saveGameLoop = window.setInterval(function() {
+            localStorage.setItem("gameSave", JSON.stringify(gameData))
+              }, 15000)
+    var savegame = JSON.parse(localStorage.getItem("gameSave"))
+    if (savegame !== null) {
+      gameData = savegame
+    }
 
 function myFunction() {
     var element = document.body;
