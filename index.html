@@ -6,15 +6,35 @@
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-<h1>test</h1>
-<p>click a button to continue</p>
-<div>
+<button onclick="myFunction()">toggle theme</button>
+<h1 class="mid">hi</h1>
+<p class="mid">i dont even know why im doing this lol</p>
+<div class="mid">
     <button onclick="document.location=`https://youtu.be/Lrj2Hq7xqQ8`" target="_blank">press me</button>
     <a href="hi.html" target="_blank"><button>don't press me</button></a>
 </div>
-<div>
-    <button>Useless Button 1</button>
-    <a href="test.html"><button>Useless Button 2</button></a>
+<div class="mid">
+    <button>useless button</button>
+    <a href="test.html"><button>clicker (wip)</button></a>
+    <button onclick="document.location=`https://youtube.com/c/cjhay01`" target="_blank">yt channel</button>
 </div>
+<script>
+    function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+    if (element.classList.contains("dark-mode")) {
+           localStorage.setItem("background", "dark-mode");
+         } else {
+           localStorage.setItem("background", "");
+         }
+       }
+       
+document.addEventListener("DOMContentLoaded", function(event) {
+    var background = localStorage.getItem("background");
+    if (background) {
+        document.body.className += background;
+        }
+       })
+</script>
 </body>
 </html>
