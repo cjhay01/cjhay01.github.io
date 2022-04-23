@@ -12,7 +12,7 @@ document.onkeydown = function(e) {
     return false;
     }
     }
-var savegame = JSON.parse(localStorage.getItem("gameSave"))
+var savegame = JSON.parse(localStorage.getItem("gameSave"));
 var gameData = {
 cps:0,
 cursorCount: 0,
@@ -21,6 +21,7 @@ cpc: 1,
 cpcCost: 69,
 score: 0
 }
+if (savegame !== null) gameData = savegame;
 function increase() {
     gameData.score += gameData.cpc;
     document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
@@ -53,9 +54,11 @@ function increase() {
         setInterval(() => {
             document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
         }, 1);
-        var saveGameLoop = window.setInterval(function() {
-            localStorage.setItem("gameSave", JSON.stringify(gameData))
-              }, 5000)
+
+
+var saveGameLoop = window.setInterval(function() {
+    localStorage.setItem("gameSave", JSON.stringify(gameData))
+     }, 5000)
 
 function myFunction() {
     var element = document.body;
