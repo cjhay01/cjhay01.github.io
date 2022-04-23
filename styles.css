@@ -6,6 +6,17 @@
 * {
     font-family: 'CookieRun';
 }
+.mid {
+    text-align: center;
+}
+body {
+    background-color: white;
+    color:black
+}
+.dark-mode {
+    background-color: black;
+    color:white;
+}
 #counter {
     font-family: 'CookieRun';
     color:blue;
