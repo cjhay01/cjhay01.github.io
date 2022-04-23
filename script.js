@@ -51,18 +51,6 @@ var gameData = {
         setInterval(() => {
             document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
         }, 1);
-
-var saveGameLoop = window.setInterval(function() {
-    localStorage.setItem("gameSave", JSON.stringify(gameData))
-}, 5000)
-var savegame = JSON.parse(localStorage.getItem("gameSave"))
-if (savegame !== null) {
-  gameData = savegame
-  document.getElementById('cpc').innerHTML = gameData.cpc
-  document.getElementById('cpcCost').innerHTML = gameData.cpcCost
-  document.getElementById('cursorCount').innerHTML = gameData.cursorCount
-  document.getElementById('cursorCost').innerHTML = gameData.cursorCost
-}
 function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");
