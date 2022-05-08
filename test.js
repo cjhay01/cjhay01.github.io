@@ -90,7 +90,7 @@ function btnClick() {
     if (clicks >= 19) text.innerHTML = "I am not gonna say anything anymore."
     if (clicks == 123) text.innerHTML = "You really want me to say something, don't you?"
     if (clicks == 124) text.innerHTML = "Alright fine, I'll give you something."
-    if (clicks == 125) text.innerHTML = "You know this thing called \"Cherry Blossom Cookie\'s trial?\"?"
+    if (clicks == 125) text.innerHTML = "You know this thing called \"Cherry Blossom Cookie\'s Trial\"?"
     if (clicks == 126) text.innerHTML = "I believe there are 3 hidden \"iterations\" of that in the \"server\". What am I saying? I dunno."
     if (clicks == 127) text.innerHTML = "The first one is posted by the site owner. Who? Don't ask me."
     if (clicks == 128) text.innerHTML = "Another is posted by \"an immortal god\", who is a \"helper\". I have no idea what these terms are."
