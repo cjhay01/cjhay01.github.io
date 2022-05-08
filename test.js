@@ -16,6 +16,9 @@ document.onkeydown = function(e) {
     if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
     return false;
     }
+    if(e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)){
+    return false;
+    }
     }
 var clicks = -1;
 var time = 0;
@@ -77,11 +80,16 @@ var idleFunction = setInterval((idleTimer), 5000);
 function idleTimer() {
     time++
     text.innerHTML = idleDialogue[time]
-    if (time == 23) clearInterval(idleFunction)
+    if (time == 23) clearInterval(idleFunction);
     if (time < 18) image.style.display = "none"
     else image.style.display = "inline-block"
 }
-
+function btnSkip() {
+    image.style.display = "inline-block"
+    clearInterval(idleFunction)
+    text.innerHTML = "Wait how did you find that button? Whatever. It's useless anyway."
+    document.getElementById("btn").style.display = "none"
+}
 function btnClick() {
     var text = document.getElementById("text")
     clearInterval(idleFunction)
@@ -90,7 +98,7 @@ function btnClick() {
     if (clicks >= 19) text.innerHTML = "I am not gonna say anything anymore."
     if (clicks == 123) text.innerHTML = "You really want me to say something, don't you?"
     if (clicks == 124) text.innerHTML = "Alright fine, I'll give you something."
-    if (clicks == 125) text.innerHTML = "You know this thing called \"Cherry Blossom Cookie\'s Trial\"?"
+    if (clicks == 125) text.innerHTML = "You know this thing called \"Cherry Blossom Cookie\'s trial?\"?"
     if (clicks == 126) text.innerHTML = "I believe there are 3 hidden \"iterations\" of that in the \"server\". What am I saying? I dunno."
     if (clicks == 127) text.innerHTML = "The first one is posted by the site owner. Who? Don't ask me."
     if (clicks == 128) text.innerHTML = "Another is posted by \"an immortal god\", who is a \"helper\". I have no idea what these terms are."
