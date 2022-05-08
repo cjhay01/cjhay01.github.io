@@ -22,4 +22,5 @@ p {
 }
 img {
     display: none;
+    cursor: pointer;
 }
