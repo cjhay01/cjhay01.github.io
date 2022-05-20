@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'CookieRun';
+    src: url('https://cjhay01.github.io/fonts/CookieRun_Bold.ttf');
+}
+
+* {
+    font-family: 'CookieRun';
+    touch-action: manipulation;
+}
+body {
+    background-color: white;
+    color:black
+}
+.dark-mode {
+    background-color: black;
+    color:white;
+}
+button {
+    border: none;
+}
+div, p {
+    margin-left: 0px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.gen {
+    display: inline-block;
+}
+#gen2 {
+    margin-left: 10px;
+}
+#counter {
+    font-family: 'CookieRun';
+    font-size: xx-large;
+}
