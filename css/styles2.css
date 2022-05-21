@@ -8,8 +8,8 @@
     touch-action: manipulation;
 }
 body {
-    background-color: white;
-    color:black
+    background-color: black;
+    color:white
 }
 .dark-mode {
     background-color: black;
@@ -19,11 +19,10 @@ button {
     border: none;
 }
 div, p {
-    margin-left: 0px;
     text-align: center;
     padding-bottom: 30px;
 }
-.gen {
+.gen, input {
     display: inline-block;
 }
 #gen2 {

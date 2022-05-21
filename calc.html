@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>why am i doing this again</title>
+<link rel="stylesheet" href="./css/styles2.css">
+</head>
+<body style="background-color:black"></body>
+<p style="font-size:x-large; margin-top: 50px; color: white;"><span id="calc">ok</span></p>
+<select style="margin-left: 615px;display:flexbox;margin-bottom: 50px;" onchange="changeText(event)">
+    <option disabled selected>rarity (for multiplier)</option>
+    <option value="Common">common</option>
+    <option value="Rare">rare</option>
+    <option value="Special">special</option>
+    <option value="Epic">epic</option>
+    <option value="Ancient">ancient</option>
+    <option value="Legendary">legendary</option>
+</select>
+<div>
+    <label>level: </label><input placeholder="level" id="level"><br>
+    <label>multiplier: </label><input placeholder="multiplier" style="margin-right: 38.5px" id="multiText"><br> 
+    <label>stats: </label><input style="margin-right: 3px"id="hp"><br>
+    <input style="margin-left: 45px;" id="atk"><br>
+    <input style="margin-left: 45px" id="def"><br>
+    <br><button onclick="calc()">calculate</button>
+</div>
+<script src="./js/g.js"></script>
+</html>
