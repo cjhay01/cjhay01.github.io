@@ -63,7 +63,7 @@ function calc() {
     if (isNaN(parseInt(baseATK))) return calcText.innerHTML = "atk NaN"
     
     if (defInput.value != "") baseDEF = parseInt(defInput.value);
-    if (isNaN(parseInt(baseDEF))) return calcText.innerHTML = "def NaN"
+    if (isNaN(parseInt(baseDEF))) return calcText.innerHTML = "def NaN" 
 
     calcText.innerHTML = "HP: " + (levelInt * multiplier * baseHP + baseHP).toLocaleString() + "<br>ATK: " + (levelInt * multiplier * baseATK + baseATK).toLocaleString() + "<br>DEF: " + (levelInt * multiplier * baseDEF + baseDEF).toLocaleString()
 }
