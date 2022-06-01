@@ -27,6 +27,8 @@ if (savegame !== null) gameData = savegame;
 document.getElementById("cursorCost").innerHTML = gameData.cursorCost;
 document.getElementById("cpcCost").innerHTML = gameData.cpcCost;
 document.getElementById("cursorCount").innerHTML = gameData.cursorCount;
+document.getElementById("gen2Count").innerHTML = gameData.gen2Count;
+document.getElementById("gen2Cost").innerHTML = gameData.gen2Cost;
 function increase() {
     gameData.score += gameData.cpc;
     document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
@@ -36,7 +38,7 @@ function increase() {
             gameData.score -= gameData.cursorCost;
             gameData.cursorCount++;
             gameData.cps++;
-            gameData.cursorCost = Math.ceil(Math.pow(gameData.cursorCost, 1.00));
+            gameData.cursorCost = Math.floor(gameData.cursorCost + gameData.cursorCost * 0);
             document.getElementById('cursorCost').innerHTML = gameData.cursorCost.toLocaleString();
             cursorCountElement.innerHTML = gameData.cursorCount;
         }
@@ -51,14 +53,17 @@ function increase() {
             document.getElementById('gen2Count').innerHTML = gameData.gen2Count;
         }
     }
-    document.getElementById("cpcBtn").onclick = function() {
+    function cpcPurchase() {
         if (gameData.score >= gameData.cpcCost) {
             gameData.score -= gameData.cpcCost;
             gameData.cpc++;
-            gameData.cpcCost = Math.ceil(Math.pow(gameData.cpcCost, 1.02));
+            gameData.cpcCost = Math.ceil(Math.pow(gameData.cpcCost, 1.00));
             document.getElementById('cpcCost').innerHTML = gameData.cpcCost.toLocaleString()
             cpcElement.innerHTML = gameData.cpc;
         }
+    }
+    document.getElementById("cpcMax").onclick = function() {
+        while (gameData.score >= gameData.cpcCost) cpcPurchase()
     }
     cpcElement = document.getElementById("cpc");
         cpcElement.innerHTML = gameData.cpc;
