@@ -20,7 +20,7 @@
 <div>
         moose: <span id="cpc">1</span> purple potatoes per harvest<br>
         moose cost: <span id="cpcCost">69</span><br>
-        <input type="button" id="cpcBtn" value="buy moose (legally)" class="button2">
+        <input type="button" id="cpcBtn" value="buy moose (legally)" onclick="cpcPurchase()" class="button2"><input type="button" id="cpcMax" value="buy max">
 </div>
 <div id="cursor">
     <p class="gen">
@@ -29,7 +29,7 @@
 	<input type="button" id="gen1Btn" value="buy gen1" class="button3">
     </p>
     <p class="gen" id="gen2">
-        gen2: <span id="gen2Count">0</span> (does not work yet)<br>
+        gen2: <span id="gen2Count">0</span><br>
         gen2 cost: <span id="gen2Cost">5,000</span><br>
         <input type="button" id ="gen2Btn" value="buy gen2">
     </p>
