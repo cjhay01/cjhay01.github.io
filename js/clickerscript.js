@@ -24,22 +24,47 @@ gen2Count: 0,
 gen2Cost: 5000,
 }
 if (savegame !== null) gameData = savegame;
-document.getElementById("cursorCost").innerHTML = gameData.cursorCost;
-document.getElementById("cpcCost").innerHTML = gameData.cpcCost;
-document.getElementById("cursorCount").innerHTML = gameData.cursorCount;
-document.getElementById("gen2Count").innerHTML = gameData.gen2Count;
-document.getElementById("gen2Cost").innerHTML = gameData.gen2Cost;
+document.getElementById("cursorCost").innerHTML = nFormatter(gameData.cursorCost, 3);
+document.getElementById("cpcCost").innerHTML = nFormatter(gameData.cpcCost, 3);
+document.getElementById("cursorCount").innerHTML = nFormatter(gameData.cursorCount, 3);
+document.getElementById("gen2Count").innerHTML = nFormatter(gameData.gen2Count, 3);
+document.getElementById("gen2Cost").innerHTML = nFormatter(gameData.gen2Cost, 3);
+
+function nFormatter(num, digits) {
+    const lookup = [
+      { value: 1, symbol: "" },
+      { value: 1e3, symbol: "K" },
+      { value: 1e6, symbol: "M" },
+      { value: 1e9, symbol: "B" },
+      { value: 1e12, symbol: "T" },
+      { value: 1e15, symbol: "q" },
+      { value: 1e18, symbol: "Q" },
+      { value: 1e21, symbol: "s" },
+      { value: 1e24, symbol: "S" },
+      { value: 1e27, symbol: "O" },
+      { value: 1e30, symbol: "N" },
+      { value: 1e33, symbol: "D" },
+      { value: 1e36, symbol: "UD" },
+      { value: 1e39, symbol: "DD" },
+    ];
+    const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+    var item = lookup.slice().reverse().find(function(item) {
+      return num >= item.value;
+    });
+    return item ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol : "0";
+  }
+
 function increase() {
     gameData.score += gameData.cpc;
-    document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
+    document.getElementById('counter').innerHTML = nFormatter(Math.round(gameData.score), 3);
     }
     document.getElementById("gen1Btn").onclick = function() {
         if (gameData.score >= gameData.cursorCost) {
             gameData.score -= gameData.cursorCost;
             gameData.cursorCount++;
             gameData.cps++;
-            gameData.cursorCost = Math.floor(gameData.cursorCost + gameData.cursorCost * 0);
-            document.getElementById('cursorCost').innerHTML = gameData.cursorCost.toLocaleString();
+            gameData.cursorCost = Math.floor(gameData.cursorCost + gameData.cursorCost * 1);
+            document.getElementById('cursorCost').innerHTML = nFormatter(gameData.cursorCost, 3);
             cursorCountElement.innerHTML = gameData.cursorCount;
         }
     }
@@ -49,7 +74,7 @@ function increase() {
             gameData.gen2Count++;
             gameData.cps += 100;
             gameData.gen2Cost = Math.ceil(Math.pow(gameData.gen2Cost, 1.00));
-            document.getElementById('gen2Cost').innerHTML = gameData.gen2Cost.toLocaleString();
+            document.getElementById('gen2Cost').innerHTML = nFormatter(gameData.gen2Cost, 3);
             document.getElementById('gen2Count').innerHTML = gameData.gen2Count;
         }
     }
@@ -59,7 +84,7 @@ function increase() {
             gameData.cpc++;
             gameData.cpcCost = Math.ceil(Math.pow(gameData.cpcCost, 1.00));
             document.getElementById('cpcCost').innerHTML = gameData.cpcCost.toLocaleString()
-            cpcElement.innerHTML = gameData.cpc;
+            cpcElement.innerHTML = nFormatter(gameData.cpc, 3);
         }
     }
     document.getElementById("cpcMax").onclick = function() {
@@ -70,7 +95,8 @@ function increase() {
     cursorCountElement = document.getElementById("cursorCount");
         setInterval(function(){
             gameData.score += gameData.cps * 0.004;
-            document.getElementById('counter').innerHTML = Math.round(gameData.score).toLocaleString();
+            document.getElementById('counter').innerHTML = nFormatter(Math.round(gameData.score), 3);
+            document.getElementById('counter').title = gameData.score.toLocaleString();
             document.getElementById('scorePerSec').innerHTML = gameData.cps
         }, 1);
 var saveGameLoop = window.setInterval(function() {
