@@ -18,7 +18,12 @@
     <a href="clicker.html"><button>clicker (wip)</button></a>
     <button onclick="document.location=`https://youtube.com/c/cjhay01`" target="_blank">yt channel</button>
 </div><br><br><br>
-<div class="mid"><span id="timer" style="font-size:large"></span></div>
+<div class="mid" style="font-size:large">
+  <span id="timer-day">x</span> <span id="day">days</span>, 
+  <span id="timer-hour">x</span> <span id="hour">hours</span>, 
+  <span id="timer-min">x</span> <span id="min">minutes</span>, 
+  <span id="timer-sec">x</span> <span id="sec">seconds</span> left until <span id="year">x</span>!
+</div>
 <script>
 setInterval(function() {
   var dateFuture = new Date(new Date().getFullYear() +1, 0, 1);
@@ -32,9 +37,20 @@ var days = Math.floor(hours/24);
 hours = hours-(days*24);
 minutes = minutes-(days*24*60)-(hours*60);
 seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
-if (seconds == 1) { document.getElementById("timer").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " second left until " + (new Date().getFullYear() + 1) + "!" }
-else {document.getElementById("timer").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds left until " + (new Date().getFullYear() + 1) + "!"}
-}, 1000)
+document.getElementById('timer-day').innerHTML = days
+document.getElementById('timer-hour').innerHTML = hours
+document.getElementById('timer-min').innerHTML = minutes
+document.getElementById('timer-sec').innerHTML = seconds
+if (seconds == 1) document.getElementById("sec").innerHTML = "second"
+else document.getElementById("sec").innerHTML = "seconds"
+if (minutes == 1) document.getElementById("min").innerHTML = " minute"
+else document.getElementById("min").innerHTML = "minutes"
+if (hours == 1) document.getElementById("hour").innerHTML = "hour"
+else document.getElementById("hour").innerHTML = "hours"
+if (days == 1) document.getElementById("day").innerHTML = "day"
+else document.getElementById("day").innerHTML = "days"
+})
+document.getElementById('year').innerHTML = (new Date().getFullYear() + 1)
     function dm() {
     var element = document.body;
     element.classList.toggle("dark-mode");
