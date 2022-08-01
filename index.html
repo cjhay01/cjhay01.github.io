@@ -32,7 +32,8 @@ var days = Math.floor(hours/24);
 hours = hours-(days*24);
 minutes = minutes-(days*24*60)-(hours*60);
 seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
-document.getElementById("timer").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds left until " + (new Date().getFullYear() + 1) + "!"
+if (seconds == 1) { document.getElementById("timer").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " second left until " + (new Date().getFullYear() + 1) + "!" }
+else {document.getElementById("timer").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds left until " + (new Date().getFullYear() + 1) + "!"}
 }, 1000)
     function dm() {
     var element = document.body;
