@@ -13,7 +13,8 @@ var random = [
     "Never gonna give y-",
     "no bitches?",
     "lasagna",
-    "h"
+    "h",
+    `you just keep reloading to see every text aren't you`
 ]
 var statMultiplier = [
     {rarity:"Legendary", value:15},
