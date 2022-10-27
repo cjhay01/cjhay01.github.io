@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false;">
+<head>
+    <title>potato farm</title>
+    <meta content="the potato farm" property="og:title" />
+    <meta content="yet another generic clicker game" property="og:description" />
+    <meta content="https://cjhay01.github.io/clicker.html" property="og:url" />
+    <meta content="https://cdn.discordapp.com/attachments/805449653176631347/965876157247529010/emoji.png" property="og:image" />
+    <meta content="#A349A4" data-react-helmet="true" name="theme-color" />
+    <link rel="stylesheet" href="./css/styles2.css">
+</head>
+<button onclick="dm()" id="dm">toggle theme</button><br>
+<button onclick="a()">reset</button>
+<button onclick="save()" id="saveBtn">save</button>
+<div>
+    <h1><span id="counter">x</span> purple potatoes</h1>
+    <h3><span id="scorePerSec">0</span> purple potatoes/s</h3>
+    <button id="buton" onclick="increase()" class="button1">harvest potatoes</button>
+</div>
+<div>
+        moose: <span id="cpc">1</span> purple potatoes per harvest<br>
+        moose cost: <span id="cpcCost">69</span><br>
+        <input type="button" id="cpcBtn" value="buy moose (legally)" onclick="cpcPurchase()" class="button2"><input type="button" id="cpcMax" value="buy max">
+</div>
+<div id="cursor">
+    <p class="gen">
+	gen1: <span id="cursorCount">0</span><br>
+	gen1 cost: <span id="cursorCost">100</span><br>
+	<input type="button" id="gen1Btn" value="buy factory1" class="button3">
+    </p>
+    <p class="gen" id="gen2">
+        gen2: <span id="gen2Count">0</span><br>
+        gen2 cost: <span id="gen2Cost">5,000</span><br>
+        <input type="button" id ="gen2Btn" value="buy gen2">
+    </p>
+</div>
+<div>css is my passion<br><a href="index.html"><button>return to main page</button></a></div>
+<script src="./js/clickerscript.js"></script>
+<body oncontextmenu="return false;"></body>
+</html>

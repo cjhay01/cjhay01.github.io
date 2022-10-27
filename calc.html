@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>why am i doing this again</title>
+<meta content="calculator for something???" property="og:title" />
+<meta content='uhh this is for a game called "crumbseeker" i think it was called' property="og:description" />
+<meta content="https://cjhay01.github.io/calc.html" property="og:url" />
+<meta content="https://cdn.discordapp.com/attachments/805449653176631347/965876157247529010/emoji.png" property="og:image" />
+<meta content="#A349A4" data-react-helmet="true" name="theme-color" />
+<link rel="stylesheet" href="./css/styles4.css">
+</head>
+<p><span id="calc">ok</span></p>
+<select style="margin-bottom: 50px;" onchange="changeText(event)">
+    <option disabled selected>rarity (for multiplier)</option>
+    <option value="Common">common</option>
+    <option value="Rare">rare</option>
+    <option value="Special">special</option>
+    <option value="Epic">epic</option>
+    <option value="Ancient">ancient</option>
+    <option value="Legendary">legendary</option>
+</select>
+<div>
+    <div class="input">
+        <label>level: </label><input placeholder="level" id="level"><br>
+        <label>multiplier: </label><input placeholder="multiplier" id="multiText"><br> 
+        <label>stats: </label><input id="hp"><br>
+    </div>
+    <input id="atk"><br>
+    <input id="def"><br>
+    <br><button onclick="calc()">calculate</button>
+</div>
+<script src="./js/g.js"></script>
+</html>
