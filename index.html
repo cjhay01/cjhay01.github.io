@@ -29,11 +29,9 @@
   <span id="bday-day">x</span> <span id="days">days</span>, 
   <span id="bday-hour">x</span> <span id="hours">hours</span>, 
   <span id="bday-min">x</span> <span id="mins">minutes</span>, 
-  <span id="bday-sec">x</span> <span id="secs">seconds</span> left until my <span id="bday">x</span> birthday!
+  <span id="bday-sec">x</span> <span id="secs">seconds</span> left until my <span id="bday">x</span> birthday!<br>
 </div>
-<div class="mid" style="display:block">
-  <img id="quote"/>
-</div>
+  <img id="quote" style="width: 25%; height: 25%; display: block; margin-left: auto; margin-right: auto"/>
 <script>
 setInterval(function() {
   var dateFuture = new Date(new Date().getFullYear() +1, 0, 1);
@@ -101,7 +99,7 @@ document.getElementById('bday').innerHTML = ordinal_suffix_of(bYear)
        }
 function gen() { 
   const http = new XMLHttpRequest();
-  http.onreadystatechange = () => {
+  http.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("quote").src = http.responseText;
     }
