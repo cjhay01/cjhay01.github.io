@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>funny html paeg</title>
+<link rel="stylesheet" href="./css/styles.css">
+<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+<body>
+<button onclick="dm()">toggle theme</button>
+<h1 class="mid">hi</h1>
+<p class="mid">i dont even know why im doing this lol</p>
+<div class="mid">
+    <button onclick="document.location=`https://www.youtube.com/watch?v=o-YBDTqX_ZU`" target="_blank">press me</button>
+    <a href="hi.html" target="_blank"><button>don't press me</button></a>
+    <button onclick="gen()">generate inspirobot quote</button>
+</div>
+<div class="mid">
+    <button>useless button</button>
+    <a href="clicker.html"><button>clicker (wip)</button></a>
+    <button onclick="document.location=`https://youtube.com/c/cjhay01`" target="_blank">yt channel</button>
+</div><br><br><div class="mid" style="font-size: 21px;">unnecessary timers:</div><br>
+<div class="mid" style="font-size:large">
+  <span id="timer-day">x</span> <span id="day">days</span>, 
+  <span id="timer-hour">x</span> <span id="hour">hours</span>, 
+  <span id="timer-min">x</span> <span id="min">minutes</span>, 
+  <span id="timer-sec">x</span> <span id="sec">seconds</span> left until <span id="year">x</span>!
+</div>
+<div class="mid" style="font-size:large">
+  <span id="bday-day">x</span> <span id="days">days</span>, 
+  <span id="bday-hour">x</span> <span id="hours">hours</span>, 
+  <span id="bday-min">x</span> <span id="mins">minutes</span>, 
+  <span id="bday-sec">x</span> <span id="secs">seconds</span> left until my <span id="bday">x</span> birthday!
+</div>
+<div class="mid" style="display:block">
+  <img id="quote"/>
+</div>
+<script>
+setInterval(function() {
+  var dateFuture = new Date(new Date().getFullYear() +1, 0, 1);
+var date2 = new Date(new Date().getFullYear() + 1, 2, 1 )
+var dateNow = new Date();
+var bYear = (new Date().getFullYear()) + 1 - 2006
+function ordinal_suffix_of(i) {
+    var j = i % 10,
+        k = i % 100;
+    if (j == 1 && k != 11) {
+        return i + "st";
+    }
+    if (j == 2 && k != 12) {
+        return i + "nd";
+    }
+    if (j == 3 && k != 13) {
+        return i + "rd";
+    }
+    return i + "th";
+}
+
+var seconds = Math.floor((dateFuture - (dateNow))/1000)
+var bSec = Math.floor((date2 - (dateNow))/1000);
+var minutes = Math.floor(seconds/60);
+var bMin = Math.floor(bSec/60);
+var hours = Math.floor(minutes/60);
+var bHour = Math.floor(bMin/60)
+var days = Math.floor(hours/24)
+var bDay = Math.floor(bHour/24);
+
+hours = hours-(days*24);
+bHour = bHour-(bDay*24);
+bMin = bMin-(bDay*24*60)-(bHour*60);
+minutes = minutes-(days*24*60)-(hours*60);
+bSec = bSec-(bDay*24*60*60)-(bHour*60*60)-(bMin*60);
+seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
+document.getElementById('timer-day').innerHTML = days
+document.getElementById('timer-hour').innerHTML = hours
+document.getElementById('timer-min').innerHTML = minutes
+document.getElementById('timer-sec').innerHTML = seconds
+document.getElementById('bday-day').innerHTML = bDay
+document.getElementById('bday-hour').innerHTML = bHour
+document.getElementById('bday-min').innerHTML = bMin
+document.getElementById('bday-sec').innerHTML = bSec
+if (seconds == 1) document.getElementById("sec").innerHTML = "second", document.getElementById("secs").innerHTML = "second";
+else document.getElementById("sec").innerHTML = "seconds", document.getElementById("secs").innerHTML = "seconds";
+if (minutes == 1) document.getElementById("min").innerHTML = " minute", document.getElementById("mins").innerHTML = " minute"
+else document.getElementById("min").innerHTML = "minutes", document.getElementById("mins").innerHTML = " minutes"
+if (hours == 1) document.getElementById("hour").innerHTML = "hour", document.getElementById("hours").innerHTML = "hour"
+else document.getElementById("hour").innerHTML = "hours", document.getElementById("hours").innerHTML = "hours"
+if (days == 1) document.getElementById("day").innerHTML = "day", document.getElementById("days").innerHTML = "day"
+else document.getElementById("day").innerHTML = "days", document.getElementById("days").innerHTML = "days"
+
+document.getElementById('year').innerHTML = (new Date().getFullYear() + 1)
+document.getElementById('bday').innerHTML = ordinal_suffix_of(bYear)
+})
+    function dm() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+    if (element.classList.contains("dark-mode")) {
+           localStorage.setItem("background", "dark-mode");
+         } else {
+           localStorage.setItem("background", "");
+         }
+       }
+function gen() { 
+  const http = new XMLHttpRequest();
+  http.onreadystatechange = () => {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("quote").src = http.responseText;
+    }
+  }
+  http.open("GET", "https://inspirobot.me/api?generate=true", true)
+  http.send()
+}
+document.addEventListener("DOMContentLoaded", function(event) {
+    var background = localStorage.getItem("background");
+    if (background) {
+        document.body.className += background;
+        }
+       })
+</script>
+</body>
+</html>
