@@ -12,6 +12,7 @@
 <div class="mid">
     <button onclick="document.location=`https://www.youtube.com/watch?v=o-YBDTqX_ZU`" target="_blank">press me</button>
     <a href="hi.html" target="_blank"><button>don't press me</button></a>
+    <button onclick="gen()">generate inspirobot quote</button>
 </div>
 <div class="mid">
     <button>useless button</button>
@@ -29,6 +30,9 @@
   <span id="bday-hour">x</span> <span id="hours">hours</span>, 
   <span id="bday-min">x</span> <span id="mins">minutes</span>, 
   <span id="bday-sec">x</span> <span id="secs">seconds</span> left until my <span id="bday">x</span> birthday!
+</div>
+<div class="mid" style="display:block">
+  <img id="quote"/>
 </div>
 <script>
 setInterval(function() {
@@ -95,7 +99,16 @@ document.getElementById('bday').innerHTML = ordinal_suffix_of(bYear)
            localStorage.setItem("background", "");
          }
        }
-       
+function gen() { 
+  const http = new XMLHttpRequest();
+  http.onreadystatechange = () => {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("quote").src = http.responseText;
+    }
+  }
+  http.open("GET", "https://inspirobot.me/api?generate=true", true)
+  http.send()
+}
 document.addEventListener("DOMContentLoaded", function(event) {
     var background = localStorage.getItem("background");
     if (background) {
