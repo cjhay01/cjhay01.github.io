@@ -109,6 +109,7 @@ function gen() {
   http.open("GET", "https://inspirobot.me/api?generate=true", true)
   http.send()
 }
+
 document.addEventListener("DOMContentLoaded", function(event) {
     var background = localStorage.getItem("background");
     if (background) {
