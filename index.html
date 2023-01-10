@@ -38,7 +38,7 @@ setInterval(function() {
 var date2 = new Date(new Date().getFullYear(), 2, 1)
 var dateNow = new Date();
 if (Date.now() > date2.getTime()) date2 = new Date(new Date().getFullYear()+1,2,1);
-var bYear = (new Date().getFullYear()) + 1 - 2006
+var bYear = date2.getFullYear() - 2006;
 function ordinal_suffix_of(i) {
     var j = i % 10,
         k = i % 100;
