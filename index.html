@@ -89,8 +89,8 @@ else document.getElementById("day").innerHTML = "days", document.getElementById(
 
 document.getElementById('year').innerHTML = (new Date().getFullYear() + 1)
 document.getElementById('bday').innerHTML = ordinal_suffix_of(bYear)
+if (Date.getDate == 1 && Date.getMonth() == 2) document.getElementById("theday").innerHTML = "bday today!!!";
 })
-    if (Date.getDate == 1 && Date.getMonth() == 2) document.getElementById("theday").innerHTML = "bday today!!!";
     function dm() {
     var element = document.body;
     element.classList.toggle("dark-mode");
