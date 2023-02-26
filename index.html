@@ -89,7 +89,7 @@ else document.getElementById("day").innerHTML = "days", document.getElementById(
 
 document.getElementById('year').innerHTML = (new Date().getFullYear() + 1)
 document.getElementById('bday').innerHTML = ordinal_suffix_of(bYear)
-if (new Date(Date.now).getDate() == 1 && new Date(Date.now).getMonth() == 2) document.getElementById("theday").innerHTML = "bday today!!!";
+if (new Date(Date.now()).getDate() == 1 && new Date(Date.now()).getMonth() == 2) document.getElementById("theday").innerHTML = "bday today!!!";
 })
     function dm() {
     var element = document.body;
