@@ -1,4 +1,6 @@
-﻿ok as of mar 30(?) menus and buttons are broken on all commands because of a discord issue
+UPDATE: it's fixed now you can ignore this lol
+
+ok as of mar 30(?) menus and buttons are broken on all commands because of a discord issue
 
 i can simply update the package version the bot is running on (not gonna get into nerdy stuff here) but the big problem is that some of you might know (it's ok if you don't know) my laptop is broken and i was borrowing my parent's laptop the past weeks but now they won't let m
 
