@@ -9,6 +9,8 @@
   ],
   "spec": 2,
   "semanticColors": {
-    "BACKGROUND_PRIMARY": ["#000000"]
+    "BACKGROUND_PRIMARY": ["#000000"],
+    "BACKGROUND_MOBILE_SECONDARY": ["#000000"],
+    "BACKGROUND_TERTIARY": ["#000000"]
   }
 }
