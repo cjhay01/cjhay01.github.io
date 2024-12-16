@@ -1,5 +1,5 @@
 var random = [
-    "yo",
+    /*"yo",
     "RoyalMike was here",
     "when will CRT become un-horny",
     "cope, seethe, mald",
@@ -14,7 +14,8 @@ var random = [
     "no bitches?",
     "lasagna",
     "h",
-    `you just keep reloading to see every text aren't you`
+    `you just keep reloading to see every text aren't you`*/
+    `DEPRECATED. you can still use this but it's not gonna be the same as the current (2024/2025) cs stats`
 ]
 var statMultiplier = [
     {rarity:"Legendary", value:15},
